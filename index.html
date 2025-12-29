@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="GSTalk: Few-Shot Talking Head Synthesis based on Gaussian Splatting">
+  <meta name="keywords" content="Talking Head, Gaussian Splatting, Few-Shot Learning, 3D Reconstruction">
+  <title>GSTalk: Few-Shot Talking Head Synthesis based on Gaussian Splatting</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="stylesheet" href="./static/css/ppage.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 style="font-size:30px; width: 1100px" >
+            GSTALK: FEW-SHOT TALKING HEAD SYNTHESIS BASED ON GAUSSIAN SPLATTING
+          </h1>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Paper Link -->
+              <span class="link-block">
+                <a href="javascript:void(0)"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- arXiv Link -->
+              <span class="link-block">
+                <a href="javascript:void(0)"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link -->
+              <span class="link-block">
+                <a href="https://github.com/SFGHRT/GSTalk"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+<!-- 框架图 -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/method.png" alt="method" height="100%">
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">GSTalk Framework</span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- 第一个视频 Framework.mp4 -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <div class="hero-body">
+        <video id="teaser-framework" autoplay muted loop playsinline width="90%">
+          <source src="./static/video/Framework.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 摘要 -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Radiance field-based methods perform well in constructing 3D talking heads, but they require long training times and lack accurate reconstruction of facial texture details. 
+            We propose GSTalk, a 3D Gaussian Splatting-based reconstruction method to generate posable talking heads, addressing challenges such as reconstruction quality and audio-visual synchronization. 
+            Specifically, we design a universal head synthesizer that learns universal motion priors from a video corpus by decomposing personalized and universal motions. 
+            This stage is supervised using photometric image loss and negative correlation loss. 
+            We then rapidly construct identity-specific dynamic heads by combining individual motion fields with pre-trained universal motion fields, achieving highly accurate reconstruction results supervised by photometric loss and geometric constraints. 
+            Experimental results demonstrate that our method outperforms previous methods in terms of facial fidelity, lip sync accuracy, and rendering speed.
+          </p>
+          <p><b>Index Terms:</b> Talking Head, Gaussian Splatting</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 其他视频 -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <div class="hero-body">
+        <video id="teaser-gstalk" autoplay muted loop playsinline width="90%">
+          <source src="./static/video/GSTalk.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <div class="hero-body">
+        <video id="teaser-self-1" controls muted preload playsinline width="90%">
+          <source src="./static/video/Self-reconstruction_1.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <div class="hero-body">
+        <video id="teaser-self-2" controls muted preload playsinline width="90%">
+          <source src="./static/video/Self-reconstruction_2.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <div class="hero-body">
+        <video id="teaser-cross" controls muted preload playsinline width="90%">
+          <source src="./static/video/Cross-domain.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
