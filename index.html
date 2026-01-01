@@ -104,7 +104,7 @@
   </div>
 </section>
 
-<!-- 摘要 -->
+<!-- ===== Abstract ===== -->
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
@@ -112,23 +112,22 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Audio-driven 3D talking head synthesis is a challenging task.
-            Existing radiance-based methods require long training times and often suffer from color blurring.
-            Gaussian Splatting based methods also struggle with inaccurate lip movements and loss of fine facial details.
-            We propose <b>TalkGS</b>, a high-fidelity talking head synthesis method based on temporally consistent Gaussian splatting.
-          </p>
-          <p>
-            Specifically, we adopt a two-stage training paradigm.
-            The first stage performs person-agnostic generic training to capture cross-identity audio–motion mappings,
-            while the second stage conducts identity-adaptive training to refine personalized motion based on the learned generic motion.
-            To enhance the consistency of audio-motion mapping, we introduce a <b>MotionFormer</b> module,
-            which encodes Gaussian representations over temporal windows to improve appearance consistency.
-            MotionFormer is applied to the personalized motion module in both stages.
-          </p>
-          <p>
-            In addition, we design a patch-level geometric regularization to improve color fidelity and preserve facial details.
-            Extensive experimental results demonstrate that TalkGS outperforms state-of-the-art methods
-            in terms of synthesis quality, audio-motion synchronization, and visual fidelity.
+            Audio-driven 3D talking head synthesis remains a challenging task due to the complex
+            coupling between audio signals and facial motion as well as the requirement for
+            temporally consistent appearance modeling. Existing radiance-based methods require
+            long training times and often suffer from color blurring, while Gaussian Splatting based
+            methods struggle with inaccurate lip movements and loss of fine-grained facial details.
+            In this paper, we propose <b>TalkGS</b>, a high-fidelity talking head synthesis framework
+            based on temporally consistent Gaussian splatting. Our method adopts a two-stage
+            training paradigm, consisting of a person-agnostic generic training stage to capture
+            cross-identity audio–motion mappings and an identity-adaptive training stage to refine
+            personalized motion guided by the learned generic motion. To enhance the consistency of
+            audio–motion alignment, we introduce a <b>MotionFormer</b> module that encodes Gaussian
+            representations over temporal windows, improving appearance stability across frames.
+            In addition, we design a patch-level geometric regularization to constrain local
+            structure and enhance color fidelity. Extensive experimental results demonstrate that
+            TalkGS outperforms state-of-the-art methods in synthesis quality, audio–motion
+            synchronization, and visual fidelity.
           </p>
           <p>
             <b>Index Terms:</b> Talking Head, Gaussian Splatting, Transformer
@@ -210,6 +209,7 @@
 
 </body>
 </html>
+
 
 
 
