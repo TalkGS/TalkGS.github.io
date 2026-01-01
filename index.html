@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-        content="GSTalk: Few-Shot Talking Head Synthesis based on Gaussian Splatting">
-  <meta name="keywords" content="Talking Head, Gaussian Splatting, Few-Shot Learning, 3D Reconstruction">
-  <title>GSTalk: Few-Shot Talking Head Synthesis based on Gaussian Splatting</title>
+        content="TalkGS: High-Fidelity Talking Head Synthesis via Temporally Consistent Gaussian Splatting">
+  <meta name="keywords"
+        content="Talking Head, Gaussian Splatting, Audio-driven Synthesis, Transformer, Temporal Consistency">
+  <title>TalkGS: High-Fidelity Talking Head Synthesis via Temporally Consistent Gaussian Splatting</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -36,6 +37,7 @@
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
+
 <body>
 
 <section class="hero">
@@ -43,8 +45,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 style="font-size:30px; width: 1100px" >
-            GSTALK: FEW-SHOT TALKING HEAD SYNTHESIS BASED ON GAUSSIAN SPLATTING
+          <h1 style="font-size:30px; width: 1100px">
+            TALKGS: HIGH-FIDELITY TALKING HEAD SYNTHESIS VIA TEMPORALLY CONSISTENT GAUSSIAN SPLATTING
           </h1>
 
           <div class="column has-text-centered">
@@ -96,13 +98,13 @@
     <div class="hero-body">
       <img src="./static/images/method.png" alt="method" height="100%">
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">GSTalk Framework</span>
+        <span class="dnerf">TalkGS Framework</span>
       </h2>
     </div>
   </div>
 </section>
 
-<!-- 第一个视频 Framework.mp4 -->
+<!-- Framework 视频 -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="content has-text-centered">
@@ -123,14 +125,27 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Radiance field-based methods perform well in constructing 3D talking heads, but they require long training times and lack accurate reconstruction of facial texture details. 
-            We propose GSTalk, a 3D Gaussian Splatting-based reconstruction method to generate posable talking heads, addressing challenges such as reconstruction quality and audio-visual synchronization. 
-            Specifically, we design a universal head synthesizer that learns universal motion priors from a video corpus by decomposing personalized and universal motions. 
-            This stage is supervised using photometric image loss and negative correlation loss. 
-            We then rapidly construct identity-specific dynamic heads by combining individual motion fields with pre-trained universal motion fields, achieving highly accurate reconstruction results supervised by photometric loss and geometric constraints. 
-            Experimental results demonstrate that our method outperforms previous methods in terms of facial fidelity, lip sync accuracy, and rendering speed.
+            Audio-driven 3D talking head synthesis is a challenging task.
+            Existing radiance-based methods require long training times and often suffer from color blurring.
+            Gaussian Splatting based methods also struggle with inaccurate lip movements and loss of fine facial details.
+            We propose <b>TalkGS</b>, a high-fidelity talking head synthesis method based on temporally consistent Gaussian splatting.
           </p>
-          <p><b>Index Terms:</b> Talking Head, Gaussian Splatting</p>
+          <p>
+            Specifically, we adopt a two-stage training paradigm.
+            The first stage performs person-agnostic generic training to capture cross-identity audio–motion mappings,
+            while the second stage conducts identity-adaptive training to refine personalized motion based on the learned generic motion.
+            To enhance the consistency of audio-motion mapping, we introduce a <b>MotionFormer</b> module,
+            which encodes Gaussian representations over temporal windows to improve appearance consistency.
+            MotionFormer is applied to the personalized motion module in both stages.
+          </p>
+          <p>
+            In addition, we design a patch-level geometric regularization to improve color fidelity and preserve facial details.
+            Extensive experimental results demonstrate that TalkGS outperforms state-of-the-art methods
+            in terms of synthesis quality, audio-motion synchronization, and visual fidelity.
+          </p>
+          <p>
+            <b>Index Terms:</b> Talking Head, Gaussian Splatting, Transformer
+          </p>
         </div>
       </div>
     </div>
@@ -187,5 +202,24 @@
 </section>
 
 </body>
+</html>
 
+<!-- ===== Related Links ===== -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-left">Related Links</h2>
+        <div class="content" style="text-align: left;">
+          <p>• InsTaG: Learning Personalized 3D Talking Head from Few-Second Video.</p>
+          <p>• TalkingGaussian: Few-Shot Talking Head Synthesis with Gaussian-based Representation.</p>
+          <p>• ER-NeRF: Efficient and Realistic Neural Radiance Fields for Talking Heads.</p>
+          <p>• MimicTalk: Learning to Mimic Talking Faces from Few-Shot Samples.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
 </html>
